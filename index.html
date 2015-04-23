@@ -1,0 +1,27 @@
+<!doctype html>
+<html ng-app="application">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="bower_components/eventEmitter/EventEmitter.js"></script>
+	<script src="bower_components/eventie/eventie.js"></script>
+	<script src="bower_components/imagesloaded/imagesloaded.js"></script>
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/masonry/dist/masonry.pkgd.js"></script>
+	<script src="bower_components/angular-masonry/angular-masonry.js"></script>
+	<script src="assets/js/index.js"></script>
+	<link rel="stylesheet" href="assets/css/index.css">
+	<title>Waterfall</title>
+</head>
+<body ng-controller="waterfallCtrl">
+	<div masonry preserve-order id="waterfall" class="waterfall" masonry-options="{columnWidth: '.grid-sizer', itemSelector: '.img-text', gutter: '.gutter-sizer', percentPosition: true, transitionDuration: 0}">
+		<div class="grid-sizer"></div>
+		<div class="gutter-sizer"></div>
+		<div masonry-brick class="img-text" ng-repeat="imgText in imgTexts">
+			<img ng-src="{{imgText.imgSrc}}" alt="">
+			<p>{{imgText.imgText}}</p>
+		</div>
+	</div>
+</body>
+</html>
